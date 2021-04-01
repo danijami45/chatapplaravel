@@ -1,0 +1,46 @@
+>to check versions
+composer -v 
+npm -v 
+php -v
+
+>create laravel project with 
+composer create-project --prefer-dist laravel/laravel chatapp
+
+>install sanctum
+composer require laravel/sanctum
+
+>publish laravel sanctum configuration and migration files 
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+
+>setting up inertia
+composer require laravel/jetstream
+
+>installing inertia
+php artisan jetstream:install inertia
+
+>now migrate the migration files
+php artisan migrate
+
+>now install package.json dependencies
+npm install
+
+>to create jetstream views
+php artisan vendor:publish --tag=jetstream-views
+
+
+>run php server and npm
+php artisan server
+npm run hot
+
+>creating a model
+php artisan make:model ChatRoom -m
+php artisan make:model ChatMessages -m
+
+>Creating database seeder file
+php artisan make:seeder ChatRoomSeeder
+
+>after making changes in seeder file initiate seeding in db 
+php artisan db:seed
+
+>create controller
+php artisan make:controller ChatController
